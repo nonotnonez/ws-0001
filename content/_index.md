@@ -15,7 +15,7 @@ In this workshop we will use Terraform to manage cloud network infrastructure wi
 
 #### Content
 
-1. [Introduction](1-introduce/)
-2. [Prepairation](2-prepairation/)
+1. [Introduction](/ws-0001/1-introduce/)
+2. [Prepairation](/ws-0001/2-prepairation/)
 3. [Configure EFS](3-configureefs/)
 4. [Resource Cleanup](4-resourcecleanup/)
