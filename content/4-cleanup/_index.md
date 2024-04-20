@@ -9,31 +9,22 @@ pre : " <b> 4. </b> "
 
 We will proceed to delete the resources in the following order:
 
-1. Delete Instances
-    - Access the Amazon EC2
-    - Select **WebServers1** and **WebServers2**
-    - Select **Terminate**
+1. Terrafrom destroy:
+ - Run command: **docker-compose run --rm terraform destroy**
+ - Import **Secret & Access Key**
+![4](/ws-0001/images/4-cleanup/1-tfdestroy.png)
+![4](/ws-0001/images/4-cleanup/1-tfdestroy-2.png)
+![4](/ws-0001/images/4-cleanup/1-tfdestroy-3.png)
       
-![Terminate EC2](/images/4/ec21.png?featherlight=false&width=90pc)
-![Terminate EC2](/images/4/ec22.png?featherlight=false&width=90pc)
+2. Checking AWS Console:
+![4](/ws-0001/images/4-cleanup/2-1-awsvpc.png)
+![4](/ws-0001/images/4-cleanup/2-2-awssubnet.png)
 
-2. Delete Security Groups
-    - Access to Security Groups
-    - Select **WebServers-EFS-1-SG**
-    - Select **delete**
-      
-![Terminate EC2](/images/4/sg1.png?featherlight=false&width=90pc)
-![Terminate EC2](/images/4/sg2.png?featherlight=false&width=90pc)
-
-3. Delete file system
-    - Access the Amazon EFS
-    - Select **WebServers-EFS-1-SG**.
-    - Select **delete**
-    - Confirm.
-   
-![Terminate EC2](/images/4/efs.png?featherlight=false&width=90pc)
-![Terminate EC2](/images/4/efs-1.png?featherlight=false&width=90pc)
-
+3. Local Check:
+ - Run command:
+   - **docker system prune -a**
+   - **docker images**
+![4](/ws-0001/images/4-cleanup/3-dockerlocal.png)
 
 
 

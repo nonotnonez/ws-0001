@@ -27,6 +27,6 @@ pre : " <b> 2.4 </b> "
     - git add .
     - git commit -m "Add Tf source"
     - git push 
-
+![24](/ws-0001/images/2-prepair/2.4-github/2-gitpush.png)
 
 
