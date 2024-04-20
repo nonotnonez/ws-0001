@@ -10,6 +10,8 @@
   </url><url>
     <loc>http://localhost:1313/ws-0001/3-tfconfig/3.1-vpcsubnet/</loc>
   </url><url>
+    <loc>http://localhost:1313/ws-0001/5-iac/5.2-ansible/</loc>
+  </url><url>
     <loc>http://localhost:1313/ws-0001/2-prepair/2.2-dockercompose/</loc>
   </url><url>
     <loc>http://localhost:1313/ws-0001/2-prepair/</loc>
@@ -21,6 +23,10 @@
     <loc>http://localhost:1313/ws-0001/2-prepair/2.4-github/</loc>
   </url><url>
     <loc>http://localhost:1313/ws-0001/4-cleanup/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ws-0001/5-iac/5.1-ec2/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ws-0001/5-iac/</loc>
   </url><url>
     <loc>http://localhost:1313/ws-0001/categories/</loc>
   </url><url>

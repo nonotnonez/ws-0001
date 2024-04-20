@@ -4,7 +4,7 @@
 	"title": " IaC with Terraform and AWS ",
 	"tags": [],
 	"description": "",
-	"content": "Infrastructure As Code with Terraform and AWS Overview Project In this workshop we will use Terraform interact with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group \u0026hellip;\nOverview Terraform Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.\nTerraform plugins called providers let Terraform interact with cloud platforms and other services via their application programming interfaces (APIs). HashiCorp and the Terraform community have written over 1,000 providers to manage resources on Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP)\u0026hellip;\nContent Introduction Prepairation Terraform Configure Resource Cleanup "
+	"content": "Infrastructure As Code with Terraform and AWS Overview Project In this workshop we will use Terraform interact with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group \u0026hellip;\nOverview Terraform Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.\nTerraform plugins called providers let Terraform interact with cloud platforms and other services via their application programming interfaces (APIs). HashiCorp and the Terraform community have written over 1,000 providers to manage resources on Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP)\u0026hellip;\nContent Introduction Prepairation Terraform Configure Resource Cleanup IaC Advanced "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/2-prepair/2.1-aws/",
@@ -12,6 +12,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Setting up AWS for Terraform Account CLI \u0026amp; Secret Key Create IAM user = tf-cli Permision = AdministratorAccess Download and store Secret \u0026amp; Access Key AWS Console process "
+},
+{
+	"uri": "http://localhost:1313/ws-0001/5-iac/5.1-ec2/",
+	"title": "EC2",
+	"tags": [],
+	"description": "",
+	"content": "AWS Infratructure as code with EC2 1- Create Key Pairs AWS key-pair name: tf-keypair 2- Terraform configure Same configure files: visions.tf , provider.tf\nterraform.tfvars main.tf\nReview : Variables - VPC \u0026amp; Subnet Review : Route table - Internet gateway - Assciate subnet with Route table Review : Security Group Review : EC2 Instance provision 3 - Run Terraform docker-compose run \u0026ndash;rm terraform init docker-compose run \u0026ndash;rm terraform plan docker-compose run \u0026ndash;rm terraform apply 4 - AWS Console Check: Review : Instances Review : VPC Review : Subnet Review : Route table Review : Internet Gateway Review : Security Group 5 - Clean up: docker-compose run –rm terraform destroy "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/1-intro/",
@@ -26,6 +33,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Run Terraform Terraform init Command: docker-compose run \u0026ndash;rm terraform init Terraform plan Command: docker-compose run \u0026ndash;rm terraform plan Input AWS Access and Secret key Terraform apply Command: docker-compose run \u0026ndash;rm terraform apply Input AWS Access and Secret key AWS Console Checking VPC \u0026amp; Subnet: "
+},
+{
+	"uri": "http://localhost:1313/ws-0001/5-iac/5.2-ansible/",
+	"title": "Ansible",
+	"tags": [],
+	"description": "",
+	"content": "Infratructure As Code We are processing \u0026hellip;..\n"
 },
 {
 	"uri": "http://localhost:1313/ws-0001/2-prepair/2.2-dockercompose/",
@@ -68,6 +82,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Clean up resources We will proceed to delete the resources in the following order:\nTerrafrom destroy: Run command: docker-compose run \u0026ndash;rm terraform destroy Import Secret \u0026amp; Access Key Checking AWS Console: Local Check:\nRun command: docker system prune -a docker images "
+},
+{
+	"uri": "http://localhost:1313/ws-0001/5-iac/",
+	"title": "IaC Advanced",
+	"tags": [],
+	"description": "",
+	"content": "Infratructure As Code We are processing \u0026hellip;..\nContent EC2 Ansible "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/categories/",

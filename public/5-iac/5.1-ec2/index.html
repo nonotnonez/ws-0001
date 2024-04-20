@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title> IaC with Terraform and AWS  :: Start with Amazon EFS file system .</title>
+    <title>EC2 :: Start with Amazon EFS file system .</title>
 
     
     <link href="/ws-0001/css/nucleus.css?1713634200" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/ws-0001/">
+  <body class="" data-url="/ws-0001/5-iac/5.1-ec2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -351,7 +351,7 @@
   
     
     <li data-nav-id="/ws-0001/5-iac/" title="IaC Advanced" class="dd-item 
-        
+        parent
         
         
         ">
@@ -383,7 +383,7 @@
     
     <li data-nav-id="/ws-0001/5-iac/5.1-ec2/" title="EC2" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/ws-0001/5-iac/5.1-ec2/">
@@ -505,39 +505,164 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/5-iac/'>IaC Advanced</a> > EC2
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#aws-infratructure-as-code-with-ec2">AWS Infratructure as code with EC2</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              EC2
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="infrastructure-as-code-with-terraform-and-aws">Infrastructure As Code with Terraform and AWS</h1>
-<h4 id="overview-project">Overview Project</h4>
-<p>In this workshop we will use <strong>Terraform</strong> interact with <strong>AWS</strong> to create
-<a href="https://nonotnonez.github.io/ws-0001/3-tfconfig/3.1-vpcsubnet/">VPC, Subnet</a>,
-EC2 , Route table, Internet gateway, Security group &hellip;</p>
-<h4 id="overview-terraform">Overview Terraform</h4>
-<p>Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.</p>
-<p>Terraform plugins called providers let Terraform interact with cloud platforms and other services via their application programming interfaces (APIs). HashiCorp and the Terraform community have written over 1,000 providers to manage resources on Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP)&hellip;</p>
-<p><img alt="0" src="/ws-0001/images/1/tf-hashicorp.png?featherlight=false&width=50pc"></p>
-<h4 id="content">Content</h4>
-<ol>
-<li><a href="/ws-0001/1-intro/">Introduction</a></li>
-<li><a href="/ws-0001/2-prepair/">Prepairation</a></li>
-<li><a href="/ws-0001/3-tfconfig/">Terraform Configure</a></li>
-<li><a href="/ws-0001/4-cleanup/">Resource Cleanup</a></li>
-<li><a href="/ws-0001/5-iac/">IaC Advanced</a></li>
-</ol>
+
+	<h2 id="aws-infratructure-as-code-with-ec2">AWS Infratructure as code with EC2</h2>
+<h4 id="1--create-key-pairs">1- Create Key Pairs</h4>
+<ul>
+<li>AWS key-pair name: <strong>tf-keypair</strong></li>
+</ul>
+<h4 id="2--terraform-configure">2- Terraform configure</h4>
+<ul>
+<li>
+<p>Same configure files:  <strong>visions.tf</strong> , <strong>provider.tf</strong></p>
+</li>
+<li>
+<p><strong>terraform.tfvars</strong>
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/2-1-tfvars.png"></p>
+</li>
+<li>
+<p><strong>main.tf</strong></p>
+<ul>
+<li>
+<p>Review : Variables - VPC &amp; Subnet
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/main-1.png"></p>
+</li>
+<li>
+<p>Review : Route table - Internet gateway - Assciate subnet with Route table
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/main-2.png"></p>
+</li>
+<li>
+<p>Review : Security Group
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/main-3.png"></p>
+</li>
+<li>
+<p>Review : EC2 Instance provision
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/main-4.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3---run-terraform">3 - Run Terraform</h4>
+<ul>
+<li><strong>docker-compose run &ndash;rm terraform init</strong></li>
+<li><strong>docker-compose run &ndash;rm terraform plan</strong></li>
+<li><strong>docker-compose run &ndash;rm terraform apply</strong></li>
+</ul>
+<h4 id="4---aws-console-check">4 - AWS Console Check:</h4>
+<ul>
+<li>
+<p>Review : Instances
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/1-ec2.png?featherlight=false&width=90pc"></p>
+</li>
+<li>
+<p>Review : VPC
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/2-vpc.png?featherlight=false&width=90pc"></p>
+</li>
+<li>
+<p>Review : Subnet
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/3-subnet.png?featherlight=false&width=90pc"></p>
+</li>
+<li>
+<p>Review : Route table
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/4-rtb.png?featherlight=false&width=90pc"></p>
+</li>
+</ul>
+<p><img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/4-rtb-2.png?featherlight=false&width=90pc"></p>
+<ul>
+<li>
+<p>Review : Internet Gateway
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/5-igw.png?featherlight=false&width=90pc"></p>
+</li>
+<li>
+<p>Review : Security Group
+<img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/6-sg.png?featherlight=false&width=90pc"></p>
+</li>
+</ul>
+<p><img alt="51" src="/ws-0001/images/5-iac/5.1-ec2/aws/6-sg-2.png?featherlight=false&width=90pc"></p>
+<h4 id="5---clean-up">5 - Clean up:</h4>
+<ul>
+<li><strong>docker-compose run –rm terraform destroy</strong></li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
         
         </div> 
         
@@ -720,6 +845,7 @@ EC2 , Route table, Internet gateway, Security group &hellip;</p>
             
                 
                     
+                    
                 
                 
 
@@ -734,6 +860,7 @@ EC2 , Route table, Internet gateway, Security group &hellip;</p>
             
             
                 
+                    
                     
                 
                 
@@ -750,6 +877,9 @@ EC2 , Route table, Internet gateway, Security group &hellip;</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -774,8 +904,10 @@ EC2 , Route table, Internet gateway, Security group &hellip;</p>
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ws-0001/5-iac/" title="IaC Advanced"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ws-0001/1-intro/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ws-0001/5-iac/5.2-ansible/" title="Ansible" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -813,4 +945,3 @@ EC2 , Route table, Internet gateway, Security group &hellip;</p>
 </script>
   </body>
 </html>
-

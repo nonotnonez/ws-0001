@@ -27,3 +27,4 @@ Terraform plugins called providers let Terraform interact with cloud platforms a
 2. [Prepairation](/ws-0001/2-prepair/)
 3. [Terraform Configure](/ws-0001/3-tfconfig/)
 4. [Resource Cleanup](/ws-0001/4-cleanup/)
+5. [IaC Advanced](/ws-0001/5-iac/)
