@@ -8,15 +8,15 @@ pre : " <b> 1. </b> "
 
 # Infrastructure As Code with Terraform and AWS
 
-#### Overview
+#### Preview process
 
-HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.
+To deploy infrastructure with Terraform:
 
-You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. 
-
-Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
-
-In this workshop we will use Terraform with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group
+- Scope - Identify the infrastructure for your project.
+- Author - Write the configuration for your infrastructure.
+- Initialize - Install the plugins Terraform needs to manage the infrastructure.
+- Plan - Preview the changes Terraform will make to match your configuration.
+- Apply - Make the planned changes.
 
 ![1](/ws-0001/images/1/terraform.png?featherlight=false&width=90pc)
 

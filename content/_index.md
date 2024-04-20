@@ -7,17 +7,19 @@ chapter : false
 
 # Infrastructure As Code with Terraform and AWS
 
-#### Overview
+#### Overview Project
 
-HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.
+In this workshop we will use **Terraform** interact with **AWS** to create
+[VPC, Subnet](https://nonotnonez.github.io/ws-0001/3-tfconfig/3.1-vpcsubnet/),
+EC2 , Route table, Internet gateway, Security group ...
 
-You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. 
+#### Overview Terraform
 
-Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
+Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.
 
-In this workshop we will use Terraform with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group
+Terraform plugins called providers let Terraform interact with cloud platforms and other services via their application programming interfaces (APIs). HashiCorp and the Terraform community have written over 1,000 providers to manage resources on Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP)...
 
-![0](/ws-0001/images/1/terraform.png?featherlight=false&width=50pc)
+![0](/ws-0001/images/1/tf-hashicorp.png?featherlight=false&width=50pc)
 
 #### Content
 
