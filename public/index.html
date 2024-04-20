@@ -3,30 +3,30 @@
   <head><script src="/ws-0001/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=ws-0001/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.123.8">
     <meta name="description" content="">
 <meta name="author" content="tuanatran.vn@gmail.com">
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title> Amazon EFS file system  :: Start with Amazon EFS file system .</title>
+    <title> IaC with Terraform and AWS  :: Start with Amazon EFS file system .</title>
 
     
-    <link href="/ws-0001/css/nucleus.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/fontawesome-all.min.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/hybrid.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/featherlight.min.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/auto-complete.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/theme.css?1713155427" rel="stylesheet">
-    <link href="/ws-0001/css/hugo-theme.css?1713155427" rel="stylesheet">
+    <link href="/ws-0001/css/nucleus.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/fontawesome-all.min.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/hybrid.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/featherlight.min.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/auto-complete.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/theme.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/hugo-theme.css?1713584155" rel="stylesheet">
     
-    <link href="/ws-0001/css/theme-workshop.css?1713155427" rel="stylesheet">
+    <link href="/ws-0001/css/theme-workshop.css?1713584155" rel="stylesheet">
     
     
 
-    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713155427"></script>
+    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713584155"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713155427"></script>
-<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713155427"></script>
+<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713584155"></script>
+<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713584155"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/ws-0001\/";
     
 </script>
-<script type="text/javascript" src="/ws-0001/js/search.js?1713155427"></script>
+<script type="text/javascript" src="/ws-0001/js/search.js?1713584155"></script>
 
     
   </div>
@@ -82,12 +82,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/1-introduce/" title="Introduction" class="dd-item 
+    <li data-nav-id="/ws-0001/1-intro/" title="Introduction" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/1-introduce/">
+      <a href="/ws-0001/1-intro/">
            <b> 1. </b> Introduction
           
             <i class="fas fa-check read-icon"></i>
@@ -108,12 +108,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/2-prepairation/" title="Prepairation" class="dd-item 
+    <li data-nav-id="/ws-0001/2-prepair/" title="Prepairation" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/2-prepairation/">
+      <a href="/ws-0001/2-prepair/">
            <b> 2. </b> Prepairation
           
             <i class="fas fa-check read-icon"></i>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/2-prepairation/2.1-vpcsubnets/" title="VPC &amp; Subnets" class="dd-item 
+    <li data-nav-id="/ws-0001/2-prepair/2.1-aws/" title="AWS" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/2-prepairation/2.1-vpcsubnets/">
-           <b> 2.1 </b> VPC &amp; Subnets
+      <a href="/ws-0001/2-prepair/2.1-aws/">
+           <b> 2.1 </b> AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/2-prepairation/2.2-internetgateway/" title="Internet gateway" class="dd-item 
+    <li data-nav-id="/ws-0001/2-prepair/2.2-dockercompose/" title="Docker Compose" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/2-prepairation/2.2-internetgateway/">
-           <b> 2.2 </b> Internet gateway
+      <a href="/ws-0001/2-prepair/2.2-dockercompose/">
+           <b> 2.2 </b> Docker Compose
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/2-prepairation/2.3-routetable/" title="Route table" class="dd-item 
+    <li data-nav-id="/ws-0001/2-prepair/2.3-terraform/" title="Terraform" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/2-prepairation/2.3-routetable/">
-           <b> 2.3 </b> Route table
+      <a href="/ws-0001/2-prepair/2.3-terraform/">
+           <b> 2.3 </b> Terraform
           
             <i class="fas fa-check read-icon"></i>
           
@@ -223,41 +223,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/2-prepairation/2.4-securitygroups/" title="Security groups" class="dd-item 
+    <li data-nav-id="/ws-0001/2-prepair/2.4-github/" title="Github" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/2-prepairation/2.4-securitygroups/">
-           <b> 2.4 </b> Security groups
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/ws-0001/2-prepairation/2.5-instances/" title="Instances" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/ws-0001/2-prepairation/2.5-instances/">
-           <b> 2.5 </b> Instances
+      <a href="/ws-0001/2-prepair/2.4-github/">
+           <b> 2.4 </b> Github
           
             <i class="fas fa-check read-icon"></i>
           
@@ -286,13 +258,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-configureefs/" title="Configure EFS" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/" title="Terraform Configure" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-configureefs/">
-           <b> 3. </b> Configure EFS
+      <a href="/ws-0001/3-tfconfig/">
+           <b> 3. </b> Terraform Configure
           
             <i class="fas fa-check read-icon"></i>
           
@@ -317,12 +289,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-configureefs/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-configureefs/3.1-createsecuritygroupsforefs/">
+      <a href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
            <b> 3.1 </b> Create Security groups
           
             <i class="fas fa-check read-icon"></i>
@@ -345,12 +317,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-configureefs/3.2-createefsforfilesystems/" title="Create EFS for file systems" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/" title="Create EFS for file systems" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-configureefs/3.2-createefsforfilesystems/">
+      <a href="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/">
            <b> 3.2 </b> Create EFS for file systems
           
             <i class="fas fa-check read-icon"></i>
@@ -373,12 +345,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-configureefs/3.3-launchinstancesandconfigureefs/" title="Launch Instances and Configure EFS" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.3-launchinstancesandconfigureefs/" title="Launch Instances and Configure EFS" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-configureefs/3.3-launchinstancesandconfigureefs/">
+      <a href="/ws-0001/3-tfconfig/3.3-launchinstancesandconfigureefs/">
            <b> 3.3 </b> Launch Instances and Configure EFS
           
             <i class="fas fa-check read-icon"></i>
@@ -401,12 +373,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-configureefs/3.4-sharefilesbetweentwoec2instances/" title="Share files between two EC2 Instance" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.4-sharefilesbetweentwoec2instances/" title="Share files between two EC2 Instance" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-configureefs/3.4-sharefilesbetweentwoec2instances/">
+      <a href="/ws-0001/3-tfconfig/3.4-sharefilesbetweentwoec2instances/">
            <b> 3.4 </b> Share files between two EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -436,12 +408,12 @@
  
   
     
-    <li data-nav-id="/ws-0001/4-resourcecleanup/" title="Resource Cleanup" class="dd-item 
+    <li data-nav-id="/ws-0001/4-cleanup/" title="Resource Cleanup" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/4-resourcecleanup/">
+      <a href="/ws-0001/4-cleanup/">
            <b> 4. </b> Resource Cleanup
           
             <i class="fas fa-check read-icon"></i>
@@ -479,51 +451,6 @@
     <section id="prefooter">
       <hr/>
       <ul>
-      
-        <li>
-          <a class="padding">
-            <i class="fas fa-language fa-fw"></i>
-          <div class="select-style">
-            <select id="select-language" onchange="location = this.value;">
-          
-          
-          
-              
-              
-                  
-                    
-                    
-                      <option id="en" value="http://localhost:1313/ws-0001/" selected>English</option>
-                    
-                  
-              
-                  
-              
-          
-              
-              
-                  
-              
-                  
-                    
-                    
-                      <option id="vi" value="http://localhost:1313/ws-0001/vi/">Tiếng Việt</option>
-                    
-                  
-              
-          
-        </select>
-        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
-          <g>
-            <g id="arrow-drop-down">
-              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
-            </g>
-          </g>
-        </svg>
-        </div>
-        </a>
-        </li>
       
       
       
@@ -582,16 +509,19 @@
 </span>
 
  
-<h1 id="terraform-managing-network-infrastructure">Terraform: Managing Network Infrastructure</h1>
+<h1 id="infrastructure-as-code-with-terraform-and-aws">Infrastructure As Code with Terraform and AWS</h1>
 <h4 id="overview">Overview</h4>
-<p>In this workshop we will use Terraform to manage cloud network infrastructure with Amazon Web Services (AWS)</p>
-<p><img alt="VPC" src="../images/1/0001.png?featherlight=false&width=50pc"></p>
+<p>HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.</p>
+<p>You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle.</p>
+<p>Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.</p>
+<p>In this workshop we will use Terraform with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group</p>
+<p><img alt="0" src="/ws-0001/images/1/terraform.png?featherlight=false&width=50pc"></p>
 <h4 id="content">Content</h4>
 <ol>
-<li><a href="/ws-0001/1-introduce/">Introduction</a></li>
-<li><a href="/ws-0001/2-prepairation/">Prepairation</a></li>
-<li><a href="/ws-0001/3-configureefs/">Configure EFS</a></li>
-<li><a href="/ws-0001/4-resourcecleanup/">Resource Cleanup</a></li>
+<li><a href="/ws-0001/1-intro/">Introduction</a></li>
+<li><a href="/ws-0001/2-prepair/">Prepairation</a></li>
+<li><a href="/ws-0001/3-tfconfig/">Terraform Configure</a></li>
+<li><a href="/ws-0001/4-cleanup/">Resource Cleanup</a></li>
 </ol>
 	
   
@@ -719,22 +649,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -846,7 +760,7 @@
 	 
 		
 		
-			<a class="nav nav-next" href="/ws-0001/1-introduce/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ws-0001/1-intro/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -856,19 +770,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ws-0001/js/clipboard.min.js?1713155427"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713155427"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713155427"></script>
-    <script src="/ws-0001/js/jquery.sticky.js?1713155427"></script>
-    <script src="/ws-0001/js/featherlight.min.js?1713155427"></script>
-    <script src="/ws-0001/js/highlight.pack.js?1713155427"></script>
+    <script src="/ws-0001/js/clipboard.min.js?1713584155"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713584155"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713584155"></script>
+    <script src="/ws-0001/js/jquery.sticky.js?1713584155"></script>
+    <script src="/ws-0001/js/featherlight.min.js?1713584155"></script>
+    <script src="/ws-0001/js/highlight.pack.js?1713584155"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713155427"></script>
-    <script src="/ws-0001/js/learn.js?1713155427"></script>
-    <script src="/ws-0001/js/hugo-learn.js?1713155427"></script>
+    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713584155"></script>
+    <script src="/ws-0001/js/learn.js?1713584155"></script>
+    <script src="/ws-0001/js/hugo-learn.js?1713584155"></script>
 
-    <link href="/ws-0001/mermaid/mermaid.css?1713155427" rel="stylesheet" />
-    <script src="/ws-0001/mermaid/mermaid.js?1713155427"></script>
+    <link href="/ws-0001/mermaid/mermaid.css?1713584155" rel="stylesheet" />
+    <script src="/ws-0001/mermaid/mermaid.js?1713584155"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

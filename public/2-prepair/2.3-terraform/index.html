@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title>Tags :: Start with Amazon EFS file system .</title>
+    <title>Terraform :: Start with Amazon EFS file system .</title>
 
     
-    <link href="/ws-0001/css/nucleus.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/fontawesome-all.min.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/hybrid.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/featherlight.min.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/auto-complete.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/theme.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/hugo-theme.css?1713582865" rel="stylesheet">
+    <link href="/ws-0001/css/nucleus.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/fontawesome-all.min.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/hybrid.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/featherlight.min.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/auto-complete.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/theme.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/hugo-theme.css?1713584103" rel="stylesheet">
     
-    <link href="/ws-0001/css/theme-workshop.css?1713582865" rel="stylesheet">
+    <link href="/ws-0001/css/theme-workshop.css?1713584103" rel="stylesheet">
     
     
 
-    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713582865"></script>
+    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713584103"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/ws-0001/tags/">
+  <body class="" data-url="/ws-0001/2-prepair/2.3-terraform/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713582865"></script>
-<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713582865"></script>
+<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713584103"></script>
+<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713584103"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/ws-0001\/";
     
 </script>
-<script type="text/javascript" src="/ws-0001/js/search.js?1713582865"></script>
+<script type="text/javascript" src="/ws-0001/js/search.js?1713584103"></script>
 
     
   </div>
@@ -109,7 +109,7 @@
   
     
     <li data-nav-id="/ws-0001/2-prepair/" title="Prepairation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -197,7 +197,7 @@
     
     <li data-nav-id="/ws-0001/2-prepair/2.3-terraform/" title="Terraform" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/ws-0001/2-prepair/2.3-terraform/">
@@ -518,7 +518,13 @@
             
           
           
-            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > Tags
+            
+            
+          
+          
+            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/2-prepair/'>Prepairation</a> > Terraform
+          
+        
           
         
           
@@ -529,7 +535,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#route-table-configure">Route table configure</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -545,9 +555,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Terraform
             </h1>
           
 
@@ -555,11 +563,16 @@
 
 
 
-
-
+	<h2 id="route-table-configure">Route table configure</h2>
 <ul>
-	
+<li><strong>An AWS Route Table</strong> is a set of rules, also known as routes, that determine where network traffic is directed within a Virtual Private Cloud (VPC).</li>
+<li>We will create a route table (name: <strong>Route Table-Public</strong>) connect to <strong>Internet gateway</strong> and allow two subnets (<strong>WebServers-Subnet1</strong> and <strong>WebServers-Subnet2</strong>)</li>
 </ul>
+<p><img alt="VPC" src="/images/2-prepairation/231.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/2-prepairation/232.png?featherlight=false&width=90pc"></p>
+
+
+
 
 
 <footer class=" footline" >
@@ -616,6 +629,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -630,6 +644,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -663,6 +680,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -678,6 +696,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -800,8 +821,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ws-0001/2-prepair/2.2-dockercompose/" title="Docker Compose"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ws-0001/1-intro/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ws-0001/2-prepair/2.4-github/" title="Github" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -811,19 +834,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ws-0001/js/clipboard.min.js?1713582865"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713582865"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713582865"></script>
-    <script src="/ws-0001/js/jquery.sticky.js?1713582865"></script>
-    <script src="/ws-0001/js/featherlight.min.js?1713582865"></script>
-    <script src="/ws-0001/js/highlight.pack.js?1713582865"></script>
+    <script src="/ws-0001/js/clipboard.min.js?1713584103"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713584103"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713584103"></script>
+    <script src="/ws-0001/js/jquery.sticky.js?1713584103"></script>
+    <script src="/ws-0001/js/featherlight.min.js?1713584103"></script>
+    <script src="/ws-0001/js/highlight.pack.js?1713584103"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713582865"></script>
-    <script src="/ws-0001/js/learn.js?1713582865"></script>
-    <script src="/ws-0001/js/hugo-learn.js?1713582865"></script>
+    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713584103"></script>
+    <script src="/ws-0001/js/learn.js?1713584103"></script>
+    <script src="/ws-0001/js/hugo-learn.js?1713584103"></script>
 
-    <link href="/ws-0001/mermaid/mermaid.css?1713582865" rel="stylesheet" />
-    <script src="/ws-0001/mermaid/mermaid.js?1713582865"></script>
+    <link href="/ws-0001/mermaid/mermaid.css?1713584103" rel="stylesheet" />
+    <script src="/ws-0001/mermaid/mermaid.js?1713584103"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

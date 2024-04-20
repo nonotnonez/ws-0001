@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title>Tags :: Start with Amazon EFS file system .</title>
+    <title>Create EFS for file systems :: Start with Amazon EFS file system .</title>
 
     
     <link href="/ws-0001/css/nucleus.css?1713582865" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/ws-0001/tags/">
+  <body class="" data-url="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -259,7 +259,7 @@
   
     
     <li data-nav-id="/ws-0001/3-tfconfig/" title="Terraform Configure" class="dd-item 
-        
+        parent
         
         
         ">
@@ -319,7 +319,7 @@
     
     <li data-nav-id="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/" title="Create EFS for file systems" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/">
@@ -518,7 +518,13 @@
             
           
           
-            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > Tags
+            
+            
+          
+          
+            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/3-tfconfig/'>Terraform Configure</a> > Create EFS for file systems
+          
+        
           
         
           
@@ -529,7 +535,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-efs-for-file-systems">Create EFS for file systems</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -545,9 +555,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Create EFS for file systems
             </h1>
           
 
@@ -555,11 +563,64 @@
 
 
 
-
-
+	<h2 id="create-efs-for-file-systems">Create EFS for file systems</h2>
+<ol>
+<li>File systems settings:
 <ul>
-	
+<li>Services: <strong>EFS</strong></li>
+<li>Choose <strong>Create file systems</strong></li>
+<li>Name: <strong>WebServers-EFS-1</strong></li>
+<li>Uncheck <strong>Enable automatic backups</strong> (for reduce cost)</li>
+<li>Transition into infrequent Access (IA): choose <strong>None</strong></li>
+<li>Transition into Archive: choose <strong>None</strong></li>
+<li>Throught mode: <strong>Bursting</strong></li>
 </ul>
+</li>
+</ol>
+<p><img alt="VPC" src="/images/3-configureefs/321.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/322.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/323.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/324.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/325.png?featherlight=false&width=90pc"></p>
+<ol start="2">
+<li>Network access
+<ul>
+<li>VPC: <strong>WebServers</strong></li>
+<li>Mount targets:
+<ul>
+<li>Remove all default Security groups</li>
+<li>Configure for Availability zone: <strong>ap-southeast-1a</strong> access to Security group: <strong>WebServers-EFS-1-SG</strong></li>
+</ul>
+</li>
+<li>Click <strong>Create</strong></li>
+</ul>
+</li>
+</ol>
+<p><img alt="VPC" src="/images/3-configureefs/326.png?featherlight=false&width=90pc"><br>
+<img alt="VPC" src="/images/3-configureefs/327.png?featherlight=false&width=90pc"><br>
+<img alt="VPC" src="/images/3-configureefs/328.png?featherlight=false&width=90pc"><br>
+<img alt="VPC" src="/images/3-configureefs/329.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/3210.png?featherlight=false&width=90pc"></p>
+<ol start="3">
+<li>Checking and copy config EFS via DNS
+<ul>
+<li>Select <strong>WebServers-EFS-1</strong> VPC</li>
+<li>Choose <strong>Attach</strong></li>
+<li>Choose <strong>COPY</strong> Using the EFS mount helper:
+<ul>
+<li><strong>sudo mount -t efs -o tls fs-0469e4e20cb346954:/ efs</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img alt="VPC" src="/images/3-configureefs/3211.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/3212.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/3213.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/3214.png?featherlight=false&width=90pc"></p>
+
+
+
 
 
 <footer class=" footline" >
@@ -698,6 +759,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -712,6 +774,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -729,6 +794,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -744,6 +810,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -800,8 +869,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ws-0001/1-intro/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ws-0001/3-tfconfig/3.3-launchinstancesandconfigureefs/" title="Launch Instances and Configure EFS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

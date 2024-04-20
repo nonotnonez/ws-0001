@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title>Tags :: Start with Amazon EFS file system .</title>
+    <title>Share files between two EC2 Instance :: Start with Amazon EFS file system .</title>
 
     
     <link href="/ws-0001/css/nucleus.css?1713582865" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/ws-0001/tags/">
+  <body class="" data-url="/ws-0001/3-tfconfig/3.4-sharefilesbetweentwoec2instances/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -259,7 +259,7 @@
   
     
     <li data-nav-id="/ws-0001/3-tfconfig/" title="Terraform Configure" class="dd-item 
-        
+        parent
         
         
         ">
@@ -375,7 +375,7 @@
     
     <li data-nav-id="/ws-0001/3-tfconfig/3.4-sharefilesbetweentwoec2instances/" title="Share files between two EC2 Instance" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/ws-0001/3-tfconfig/3.4-sharefilesbetweentwoec2instances/">
@@ -518,7 +518,13 @@
             
           
           
-            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > Tags
+            
+            
+          
+          
+            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/3-tfconfig/'>Terraform Configure</a> > Share files between two EC2 Instance
+          
+        
           
         
           
@@ -529,7 +535,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting-efs-in-diffirent-instane">Setting EFS in diffirent Instane</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -545,9 +555,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Share files between two EC2 Instance
             </h1>
           
 
@@ -555,11 +563,70 @@
 
 
 
-
-
+	<h2 id="setting-efs-in-diffirent-instane">Setting EFS in diffirent Instane</h2>
+<ol>
+<li>
+<p>In the <strong>EFS</strong> interface:</p>
 <ul>
-	
+<li>Select <strong>WebServers-EFS-1-SG</strong></li>
+<li>Click <strong>Network</strong> tab</li>
+<li>Click <strong>Manage</strong></li>
+<li>Add mount target:
+<ul>
+<li>Configure for Availability zone: <strong>ap-southeast-1b</strong> access to Security group: <strong>WebServers-EFS-1-SG</strong></li>
 </ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img alt="VPC" src="/images/3-configureefs/341.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/342.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/343.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/344.png?featherlight=false&width=90pc"></p>
+<ol start="2">
+<li>
+<p>Checking EFS config:</p>
+<p><img alt="VPC" src="/images/3-configureefs/345.png?featherlight=false&width=90pc"></p>
+</li>
+<li>
+<p><strong>Instances</strong> configure and <strong>Mount EFS</strong> file systems:</p>
+</li>
+</ol>
+<ul>
+<li>Select <strong>WebServer2</strong>
+<ul>
+<li>
+<p>Connect to Instances</p>
+</li>
+<li>
+<p>In CMD interface run command:</p>
+<ul>
+<li>sudo -i</li>
+<li>sudo yum install -y amazon-efs-utils</li>
+<li>mkdir data</li>
+<li>ls</li>
+<li><strong>sudo mount -t efs -o tls fs-0469e4e20cb346954:/ data</strong></li>
+<li>cd data</li>
+<li>sudo bash -c &ldquo;cat &raquo; efs-1-setup.log&rdquo;
+<ul>
+<li>efs-1 mounted in site B</li>
+</ul>
+</li>
+<li>cat efs-1-setup.log</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="VPC" src="/images/3-configureefs/346.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/347.png?featherlight=false&width=90pc">
+<img alt="VPC" src="/images/3-configureefs/348.png?featherlight=false&width=90pc"></p>
+<ul>
+<li>We will see data in different Instances</li>
+</ul>
+
+
+
 
 
 <footer class=" footline" >
@@ -698,6 +765,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -712,6 +780,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -761,6 +832,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -779,6 +851,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -800,8 +875,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ws-0001/3-tfconfig/3.3-launchinstancesandconfigureefs/" title="Launch Instances and Configure EFS"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ws-0001/1-intro/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ws-0001/4-cleanup/" title="Resource Cleanup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title>Tags :: Start with Amazon EFS file system .</title>
+    <title>Create Security groups :: Start with Amazon EFS file system .</title>
 
     
     <link href="/ws-0001/css/nucleus.css?1713582865" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/ws-0001/tags/">
+  <body class="" data-url="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -259,7 +259,7 @@
   
     
     <li data-nav-id="/ws-0001/3-tfconfig/" title="Terraform Configure" class="dd-item 
-        
+        parent
         
         
         ">
@@ -291,7 +291,7 @@
     
     <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
@@ -518,7 +518,13 @@
             
           
           
-            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > Tags
+            
+            
+          
+          
+            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/3-tfconfig/'>Terraform Configure</a> > Create Security groups
+          
+        
           
         
           
@@ -529,7 +535,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#security-group-settings">Security group settings</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -545,9 +555,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Create Security groups
             </h1>
           
 
@@ -555,11 +563,31 @@
 
 
 
-
-
+	<h2 id="security-group-settings">Security group settings</h2>
+<ol>
+<li>Create <strong>Create Security group for EFS</strong> interface:
 <ul>
-	
+<li>Name:	<strong>WebServers-EFS-1-SG</strong></li>
+<li>VPC:	<strong>Web_Servers_SG</strong></li>
+<li>Configure Inbound:  Allow <strong>NFS</strong></li>
 </ul>
+</li>
+</ol>
+<p><img alt="VPC" src="/images/3-configureefs/311.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/312.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/313.png?featherlight=false&width=90pc"></p>
+<ol start="2">
+<li>Checking <strong>Security Groups</strong> interface:
+<ul>
+<li>Select <strong>WebServers-EFS-1-SG</strong></li>
+</ul>
+</li>
+</ol>
+<p><img alt="VPC" src="/images/3-configureefs/314.png?featherlight=false&width=90pc"></p>
+<p><img alt="VPC" src="/images/3-configureefs/315.png?featherlight=false&width=90pc"></p>
+
+
+
 
 
 <footer class=" footline" >
@@ -698,6 +726,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -712,6 +741,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -728,6 +758,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -800,8 +833,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ws-0001/3-tfconfig/" title="Terraform Configure"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ws-0001/1-intro/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/" title="Create EFS for file systems" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
