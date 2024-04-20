@@ -14,7 +14,7 @@ pre : " <b> 2.1 </b> "
 - Permision = **AdministratorAccess**
 - Download and store **Secret & Access Key**
 
-#### AWS Console step by step
+#### AWS Console  process
 ![21](/ws-0001/images/2-prepair/2.1-aws/1-user.png?featherlight=false&width=90pc)
 
 ![21](/ws-0001/images/2-prepair/2.1-aws/2.png?featherlight=false&width=90pc)

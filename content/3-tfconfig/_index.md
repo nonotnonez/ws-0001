@@ -6,9 +6,7 @@ chapter : false
 pre : " <b> 3. </b> "
 ---
 
-## Create Subnet & VPC on AWS
-
-Using Terraform to create VPC and Subnet via code
+-   Using Terraform to create VPC and Subnet via code
 
 
 ## Content

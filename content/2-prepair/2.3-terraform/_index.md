@@ -6,9 +6,9 @@ chapter : false
 pre : " <b> 2.3 </b> "
 ---
 
-## Terraform code to Deployment AWS
+## Terraform code to deployment AWS
 
-- **Review Terraform file** :
+- **Review Terraform configure files** :
     - **main.tf** :
          Resource blocks describe infrastructure objects like VPCs, subnets, route tables, and gateways
    ![23](/ws-0001/images/2-prepair/2.3-terraform/5-main.png)

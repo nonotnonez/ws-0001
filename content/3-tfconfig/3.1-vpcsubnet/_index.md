@@ -6,8 +6,6 @@ chapter : false
 pre : " <b> 3.1 </b> "
 ---
 ## Run Terraform
--  Check version: **docker-compose run --rm terraform version**
-![31](/ws-0001/images/3-tfconfig/1-tfinit.png)
 
 ### Terraform init
 - Command: **docker-compose run --rm terraform init**
