@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/ws-0001/images/favicon.png" type="image/png">
 
-    <title>Create Security groups :: Start with Amazon EFS file system .</title>
+    <title>VPC &amp; Subnet :: Start with Amazon EFS file system .</title>
 
     
-    <link href="/ws-0001/css/nucleus.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/fontawesome-all.min.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/hybrid.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/featherlight.min.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/auto-complete.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/theme.css?1713582865" rel="stylesheet">
-    <link href="/ws-0001/css/hugo-theme.css?1713582865" rel="stylesheet">
+    <link href="/ws-0001/css/nucleus.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/fontawesome-all.min.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/hybrid.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/featherlight.min.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/auto-complete.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/theme.css?1713586652" rel="stylesheet">
+    <link href="/ws-0001/css/hugo-theme.css?1713586652" rel="stylesheet">
     
-    <link href="/ws-0001/css/theme-workshop.css?1713582865" rel="stylesheet">
+    <link href="/ws-0001/css/theme-workshop.css?1713586652" rel="stylesheet">
     
     
 
-    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713582865"></script>
+    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713586652"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713582865"></script>
-<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713582865"></script>
+<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713586652"></script>
+<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713586652"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/ws-0001\/";
     
 </script>
-<script type="text/javascript" src="/ws-0001/js/search.js?1713582865"></script>
+<script type="text/javascript" src="/ws-0001/js/search.js?1713586652"></script>
 
     
   </div>
@@ -289,13 +289,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="VPC &amp; Subnet" class="dd-item 
         
         active
         
         ">
       <a href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
-           <b> 3.1 </b> Create Security groups
+           <b> 3.1 </b> VPC &amp; Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -522,7 +522,7 @@
             
           
           
-            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/3-tfconfig/'>Terraform Configure</a> > Create Security groups
+            <a href='/ws-0001/'> IaC with Terraform and AWS </a> > <a href='/ws-0001/3-tfconfig/'>Terraform Configure</a> > VPC & Subnet
           
         
           
@@ -555,7 +555,7 @@
           
             <h1>
               
-              Create Security groups
+              VPC &amp; Subnet
             </h1>
           
 
@@ -846,19 +846,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ws-0001/js/clipboard.min.js?1713582865"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713582865"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713582865"></script>
-    <script src="/ws-0001/js/jquery.sticky.js?1713582865"></script>
-    <script src="/ws-0001/js/featherlight.min.js?1713582865"></script>
-    <script src="/ws-0001/js/highlight.pack.js?1713582865"></script>
+    <script src="/ws-0001/js/clipboard.min.js?1713586652"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713586652"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713586652"></script>
+    <script src="/ws-0001/js/jquery.sticky.js?1713586652"></script>
+    <script src="/ws-0001/js/featherlight.min.js?1713586652"></script>
+    <script src="/ws-0001/js/highlight.pack.js?1713586652"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713582865"></script>
-    <script src="/ws-0001/js/learn.js?1713582865"></script>
-    <script src="/ws-0001/js/hugo-learn.js?1713582865"></script>
+    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713586652"></script>
+    <script src="/ws-0001/js/learn.js?1713586652"></script>
+    <script src="/ws-0001/js/hugo-learn.js?1713586652"></script>
 
-    <link href="/ws-0001/mermaid/mermaid.css?1713582865" rel="stylesheet" />
-    <script src="/ws-0001/mermaid/mermaid.js?1713582865"></script>
+    <link href="/ws-0001/mermaid/mermaid.css?1713586652" rel="stylesheet" />
+    <script src="/ws-0001/mermaid/mermaid.js?1713586652"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

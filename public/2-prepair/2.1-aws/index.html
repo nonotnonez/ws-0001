@@ -12,21 +12,21 @@
     <title>AWS :: Start with Amazon EFS file system .</title>
 
     
-    <link href="/ws-0001/css/nucleus.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/fontawesome-all.min.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/hybrid.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/featherlight.min.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/auto-complete.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/theme.css?1713584155" rel="stylesheet">
-    <link href="/ws-0001/css/hugo-theme.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/nucleus.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/fontawesome-all.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/hybrid.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/featherlight.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/auto-complete.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/theme.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/hugo-theme.css?1713588244" rel="stylesheet">
     
-    <link href="/ws-0001/css/theme-workshop.css?1713584155" rel="stylesheet">
+    <link href="/ws-0001/css/theme-workshop.css?1713588244" rel="stylesheet">
     
     
 
-    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713584155"></script>
+    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713588244"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713584155"></script>
-<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713584155"></script>
+<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713588244"></script>
+<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713588244"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/ws-0001\/";
     
 </script>
-<script type="text/javascript" src="/ws-0001/js/search.js?1713584155"></script>
+<script type="text/javascript" src="/ws-0001/js/search.js?1713588244"></script>
 
     
   </div>
@@ -289,13 +289,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.1-vpcsubnet/" title="VPC &amp; Subnet" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
-           <b> 3.1 </b> Create Security groups
+      <a href="/ws-0001/3-tfconfig/3.1-vpcsubnet/">
+           <b> 3.1 </b> VPC &amp; Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -317,13 +317,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/" title="Create EFS for file systems" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.2-ec2/" title="EC2" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/">
-           <b> 3.2 </b> Create EFS for file systems
+      <a href="/ws-0001/3-tfconfig/3.2-ec2/">
+           <b> 3.2 </b> EC2
           
             <i class="fas fa-check read-icon"></i>
           
@@ -539,8 +539,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#vpc-configure">VPC configure</a></li>
-        <li><a href="#subnets-configure">Subnets configure</a></li>
+        <li><a href="#setting-up-aws-for-terraform">Setting up AWS for Terraform</a></li>
       </ul>
     </li>
   </ul>
@@ -568,49 +567,23 @@
 
 
 
-	<h3 id="vpc-configure">VPC configure</h3>
+	<h3 id="setting-up-aws-for-terraform">Setting up AWS for Terraform</h3>
+<h4 id="account-cli--secret-key">Account CLI &amp; Secret Key</h4>
 <ul>
-<li>
-<p><strong>An AWS Virtual Private Cloud (VPC)</strong> is a virtual network environment within the Amazon Web Services (AWS) cloud platform. It allows you to create a logically isolated section of the AWS cloud where you can launch AWS resources like EC2 instances, RDS databases, and more.</p>
-</li>
-<li>
-<p>We will create a manual VPC with config.</p>
-<ul>
-<li>VPC Name:    <strong>WebServers</strong></li>
-<li>IPv4 CIDR:   <strong>10.10.0.0/16</strong></li>
+<li>Create IAM user = <strong>tf-cli</strong></li>
+<li>Permision = <strong>AdministratorAccess</strong></li>
+<li>Download and store <strong>Secret &amp; Access Key</strong></li>
 </ul>
-</li>
-</ul>
+<h4 id="aws-console-step-by-step">AWS Console step by step</h4>
 <p><img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/1-user.png?featherlight=false&width=90pc"></p>
-<h3 id="subnets-configure">Subnets configure</h3>
-<ul>
-<li>
-<p><strong>AWS Subnets</strong> are segmented portions of an Amazon Virtual Private Cloud (VPC) network.</p>
-</li>
-<li>
-<p>They allow you to divide the IP address range of your VPC and organize resources into smaller, manageable groups.</p>
-</li>
-<li>
-<p>We will create two subnets with two different Availability Zone.</p>
-</li>
-<li>
-<p>Subnet 1:</p>
-<ul>
-<li>Subnet Name:        <strong>WebServers-Subnet1</strong></li>
-<li>IPv4 CIDR:          <strong>10.10.1.0/24</strong></li>
-<li>Availability Zone:  <strong>ap-southeast-1a</strong></li>
-</ul>
-</li>
-<li>
-<p>Subnet 2:</p>
-<ul>
-<li>Subnet Name:        <strong>WebServers-Subnet2</strong></li>
-<li>IPv4 CIDR:          <strong>10.10.2.0/24</strong></li>
-<li>Availability Zone:  <strong>ap-southeast-1b</strong></li>
-</ul>
-</li>
-</ul>
-<p><img alt="VPC" src="/images/2-prepairation/212.png?featherlight=false&width=90pc"></p>
+<p><img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/2.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/3.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/4.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/5.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/6.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/7.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/8.png?featherlight=false&width=90pc">
+<img alt="21" src="/ws-0001/images/2-prepair/2.1-aws/9.png?featherlight=false&width=90pc"></p>
 
 
 
@@ -872,19 +845,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ws-0001/js/clipboard.min.js?1713584155"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713584155"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713584155"></script>
-    <script src="/ws-0001/js/jquery.sticky.js?1713584155"></script>
-    <script src="/ws-0001/js/featherlight.min.js?1713584155"></script>
-    <script src="/ws-0001/js/highlight.pack.js?1713584155"></script>
+    <script src="/ws-0001/js/clipboard.min.js?1713588244"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713588244"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713588244"></script>
+    <script src="/ws-0001/js/jquery.sticky.js?1713588244"></script>
+    <script src="/ws-0001/js/featherlight.min.js?1713588244"></script>
+    <script src="/ws-0001/js/highlight.pack.js?1713588244"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713584155"></script>
-    <script src="/ws-0001/js/learn.js?1713584155"></script>
-    <script src="/ws-0001/js/hugo-learn.js?1713584155"></script>
+    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713588244"></script>
+    <script src="/ws-0001/js/learn.js?1713588244"></script>
+    <script src="/ws-0001/js/hugo-learn.js?1713588244"></script>
 
-    <link href="/ws-0001/mermaid/mermaid.css?1713584155" rel="stylesheet" />
-    <script src="/ws-0001/mermaid/mermaid.js?1713584155"></script>
+    <link href="/ws-0001/mermaid/mermaid.css?1713588244" rel="stylesheet" />
+    <script src="/ws-0001/mermaid/mermaid.js?1713588244"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

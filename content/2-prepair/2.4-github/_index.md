@@ -6,14 +6,27 @@ chapter : false
 pre : " <b> 2.4 </b> "
 ---
 
-## Security Groups Configure
-- **AWS Security Groups** act as virtual firewalls that control inbound and outbound traffic for Amazon EC2 instances, as well as other AWS resources. 
-- They operate at the instance level and provide security at the protocol and port access level. Security Groups allow you to specify which traffic is allowed or denied by defining inbound and outbound rules. 
-- We will create a Security Groups (name: **Web_Servers_SG**) and configure **Inbound rules** and **Outbound rules** to allow Admin can connect EC2 instances
+## Version control with Github
+- Create Github Access Key : https://github.com/settings/tokens
+  - Name: **github_token_ws**
+  - Expiration:	90 days
+  - Select scopes:
+    - repo
+    - workflow
+    
+- Clone Source form Github:
+    git clone https://**token**@github.com/NoNotNonez/ws-0001.git
+- Copy Source code to Github Repo:
+    - cd /ws-0001/terraform
+- Create **.gitignore**: 
+  - to security and prevent important file upload to github
+![24](/ws-0001/images/2-prepair/2.4-github/gitignore.png)
 
-![VPC](/images/2-prepairation/241.png?featherlight=false&width=90pc)
+- Push Source code to Git Repo:
+    - git status
+    - git add .
+    - git commit -m "Add Tf source"
+    - git push 
 
-
-![VPC](/images/2-prepairation/242.png?featherlight=false&width=90pc)
 
 

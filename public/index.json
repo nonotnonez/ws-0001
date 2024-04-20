@@ -11,14 +11,7 @@
 	"title": "AWS",
 	"tags": [],
 	"description": "",
-	"content": "VPC configure An AWS Virtual Private Cloud (VPC) is a virtual network environment within the Amazon Web Services (AWS) cloud platform. It allows you to create a logically isolated section of the AWS cloud where you can launch AWS resources like EC2 instances, RDS databases, and more.\nWe will create a manual VPC with config.\nVPC Name: WebServers IPv4 CIDR: 10.10.0.0/16 Subnets configure AWS Subnets are segmented portions of an Amazon Virtual Private Cloud (VPC) network.\nThey allow you to divide the IP address range of your VPC and organize resources into smaller, manageable groups.\nWe will create two subnets with two different Availability Zone.\nSubnet 1:\nSubnet Name: WebServers-Subnet1 IPv4 CIDR: 10.10.1.0/24 Availability Zone: ap-southeast-1a Subnet 2:\nSubnet Name: WebServers-Subnet2 IPv4 CIDR: 10.10.2.0/24 Availability Zone: ap-southeast-1b "
-},
-{
-	"uri": "http://localhost:1313/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/",
-	"title": "Create Security groups",
-	"tags": [],
-	"description": "",
-	"content": "Security group settings Create Create Security group for EFS interface: Name:\tWebServers-EFS-1-SG VPC:\tWeb_Servers_SG Configure Inbound: Allow NFS Checking Security Groups interface: Select WebServers-EFS-1-SG "
+	"content": "Setting up AWS for Terraform Account CLI \u0026amp; Secret Key Create IAM user = tf-cli Permision = AdministratorAccess Download and store Secret \u0026amp; Access Key AWS Console step by step "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/1-intro/",
@@ -28,18 +21,25 @@
 	"content": "Infrastructure As Code with Terraform and AWS Overview HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.\nYou can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle.\nTerraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.\nIn this workshop we will use Terraform with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group\nContent Introduction Prepairation Terraform Configure Resource Cleanup "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/3-tfconfig/3.2-createefsforfilesystems/",
-	"title": "Create EFS for file systems",
+	"uri": "http://localhost:1313/ws-0001/3-tfconfig/3.1-vpcsubnet/",
+	"title": "VPC &amp; Subnet",
 	"tags": [],
 	"description": "",
-	"content": "Create EFS for file systems File systems settings: Services: EFS Choose Create file systems Name: WebServers-EFS-1 Uncheck Enable automatic backups (for reduce cost) Transition into infrequent Access (IA): choose None Transition into Archive: choose None Throught mode: Bursting Network access VPC: WebServers Mount targets: Remove all default Security groups Configure for Availability zone: ap-southeast-1a access to Security group: WebServers-EFS-1-SG Click Create Checking and copy config EFS via DNS Select WebServers-EFS-1 VPC Choose Attach Choose COPY Using the EFS mount helper: sudo mount -t efs -o tls fs-0469e4e20cb346954:/ efs "
+	"content": "Run Terraform Check version: docker-compose run \u0026ndash;rm terraform version Terraform init Command: docker-compose run \u0026ndash;rm terraform init Terraform plan Command: docker-compose run \u0026ndash;rm terraform plan Input AWS Access and Secret key Terraform apply Command: docker-compose run \u0026ndash;rm terraform apply Input AWS Access and Secret key AWS Console Checking VPC \u0026amp; Subnet: "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/2-prepair/2.2-dockercompose/",
 	"title": "Docker Compose",
 	"tags": [],
 	"description": "",
-	"content": "Internet gateway configure: An AWS Internet Gateway: is a managed service that allows communication between instances within your Amazon Virtual Private Cloud (VPC) and the internet.\nWe will create a Internet Gateway (name: Internet Gateway) and attach to our VPC (WebServers)\n"
+	"content": "Install \u0026amp; Run Docker Compose: Build Docker Compose for Terraform: docker-compose.yml Run Docker Compose:\nCheck Docker Images: "
+},
+{
+	"uri": "http://localhost:1313/ws-0001/3-tfconfig/3.2-ec2/",
+	"title": "EC2",
+	"tags": [],
+	"description": "",
+	"content": "Create EFS for file systems File systems settings: Services: EFS Choose Create file systems Name: WebServers-EFS-1 Uncheck Enable automatic backups (for reduce cost) Transition into infrequent Access (IA): choose None Transition into Archive: choose None Throught mode: Bursting Network access VPC: WebServers Mount targets: Remove all default Security groups Configure for Availability zone: ap-southeast-1a access to Security group: WebServers-EFS-1-SG Click Create Checking and copy config EFS via DNS Select WebServers-EFS-1 VPC Choose Attach Choose COPY Using the EFS mount helper: sudo mount -t efs -o tls fs-0469e4e20cb346954:/ efs "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/2-prepair/",
@@ -60,21 +60,21 @@
 	"title": "Terraform",
 	"tags": [],
 	"description": "",
-	"content": "Route table configure An AWS Route Table is a set of rules, also known as routes, that determine where network traffic is directed within a Virtual Private Cloud (VPC). We will create a route table (name: Route Table-Public) connect to Internet gateway and allow two subnets (WebServers-Subnet1 and WebServers-Subnet2) "
+	"content": "Terraform code to Deployment AWS Review Terraform file : main.tf : Resource blocks describe infrastructure objects like VPCs, subnets, route tables, and gateways provider.tf: Enables Terrafrom to interact with cloud providers and other APIs versions.tf: Sets version constaints for Terraform and optionally maps provides to a source address and version constaint terraform.tfvars: To set lots of variables, it is more convenient to specify their values in a variable definitions file variables.tf Input variables define reusable values and work like function arguments in general-purpose programming languages "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/3-tfconfig/",
 	"title": "Terraform Configure",
 	"tags": [],
 	"description": "",
-	"content": "Amazone Elastic File System (Amazon EFS) Using Amazon EFS, you can grow and shink your file systems automatically as you add and remove files, removing the need to provision and manage capacity to accommodate growth.\nContent Create Security groups Create EFS for file systems Launch Instances and Configure EFS Share files between two EC2 Instance "
+	"content": "Create Subnet \u0026amp; VPC Using Amazon EFS, you can grow and shink your file systems automatically as you add and remove files, removing the need to provision and manage capacity to accommodate growth.\nContent Create VPC \u0026amp; Subnet Create EC2 Launch Instances and Configure EFS Share files between two EC2 Instance "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/2-prepair/2.4-github/",
 	"title": "Github",
 	"tags": [],
 	"description": "",
-	"content": "Security Groups Configure AWS Security Groups act as virtual firewalls that control inbound and outbound traffic for Amazon EC2 instances, as well as other AWS resources. They operate at the instance level and provide security at the protocol and port access level. Security Groups allow you to specify which traffic is allowed or denied by defining inbound and outbound rules. We will create a Security Groups (name: Web_Servers_SG) and configure Inbound rules and Outbound rules to allow Admin can connect EC2 instances "
+	"content": "Version control with Github Create Github Access Key : https://github.com/settings/tokens\nName: github_token_ws Expiration:\t90 days Select scopes: repo workflow Clone Source form Github: git clone https://**token**@github.com/NoNotNonez/ws-0001.git\nCopy Source code to Github Repo:\ncd /ws-0001/terraform Create .gitignore:\nto security and prevent important file upload to github Push Source code to Git Repo:\ngit status git add . git commit -m \u0026ldquo;Add Tf source\u0026rdquo; git push "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/4-cleanup/",

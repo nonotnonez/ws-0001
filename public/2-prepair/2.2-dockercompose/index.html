@@ -12,21 +12,21 @@
     <title>Docker Compose :: Start with Amazon EFS file system .</title>
 
     
-    <link href="/ws-0001/css/nucleus.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/fontawesome-all.min.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/hybrid.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/featherlight.min.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/auto-complete.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/theme.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/hugo-theme.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/nucleus.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/fontawesome-all.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/hybrid.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/featherlight.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/auto-complete.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/theme.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/hugo-theme.css?1713588244" rel="stylesheet">
     
-    <link href="/ws-0001/css/theme-workshop.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/theme-workshop.css?1713588244" rel="stylesheet">
     
     
 
-    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713584103"></script>
+    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713588244"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713584103"></script>
-<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713584103"></script>
+<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713588244"></script>
+<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713588244"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/ws-0001\/";
     
 </script>
-<script type="text/javascript" src="/ws-0001/js/search.js?1713584103"></script>
+<script type="text/javascript" src="/ws-0001/js/search.js?1713588244"></script>
 
     
   </div>
@@ -289,13 +289,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.1-vpcsubnet/" title="VPC &amp; Subnet" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
-           <b> 3.1 </b> Create Security groups
+      <a href="/ws-0001/3-tfconfig/3.1-vpcsubnet/">
+           <b> 3.1 </b> VPC &amp; Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -317,13 +317,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/" title="Create EFS for file systems" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.2-ec2/" title="EC2" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/">
-           <b> 3.2 </b> Create EFS for file systems
+      <a href="/ws-0001/3-tfconfig/3.2-ec2/">
+           <b> 3.2 </b> EC2
           
             <i class="fas fa-check read-icon"></i>
           
@@ -537,7 +537,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#internet-gateway-configure">Internet gateway configure:</a></li>
+    <li><a href="#install--run-docker-compose">Install &amp; Run Docker Compose:</a></li>
   </ul>
 </nav>
     </div>
@@ -563,16 +563,21 @@
 
 
 
-	<h2 id="internet-gateway-configure">Internet gateway configure:</h2>
+	<h2 id="install--run-docker-compose">Install &amp; Run Docker Compose:</h2>
 <ul>
 <li>
-<p><strong>An AWS Internet Gateway:</strong> is a managed service that allows communication between instances within your Amazon Virtual Private Cloud (VPC) and the internet.</p>
+<p>Build <strong>Docker Compose</strong> for <strong>Terraform</strong>:   <strong>docker-compose.yml</strong>
+<img alt="22" src="/ws-0001/images/2-prepair/2.2-dockercompose/1-dockercompose.png"></p>
 </li>
 <li>
-<p>We will create a Internet Gateway (name: <strong>Internet Gateway</strong>) and attach to our VPC (<strong>WebServers</strong>)</p>
+<p>Run Docker Compose:</p>
 </li>
 </ul>
-<p><img alt="VPC" src="/images/2-prepairation/221.png?featherlight=false&width=90pc"></p>
+<p><img alt="22" src="/ws-0001/images/2-prepair/2.2-dockercompose/2.png"></p>
+<ul>
+<li>Check Docker Images:</li>
+</ul>
+<p><img alt="22" src="/ws-0001/images/2-prepair/2.2-dockercompose/3.png"></p>
 
 
 
@@ -837,19 +842,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ws-0001/js/clipboard.min.js?1713584103"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713584103"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713584103"></script>
-    <script src="/ws-0001/js/jquery.sticky.js?1713584103"></script>
-    <script src="/ws-0001/js/featherlight.min.js?1713584103"></script>
-    <script src="/ws-0001/js/highlight.pack.js?1713584103"></script>
+    <script src="/ws-0001/js/clipboard.min.js?1713588244"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713588244"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713588244"></script>
+    <script src="/ws-0001/js/jquery.sticky.js?1713588244"></script>
+    <script src="/ws-0001/js/featherlight.min.js?1713588244"></script>
+    <script src="/ws-0001/js/highlight.pack.js?1713588244"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713584103"></script>
-    <script src="/ws-0001/js/learn.js?1713584103"></script>
-    <script src="/ws-0001/js/hugo-learn.js?1713584103"></script>
+    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713588244"></script>
+    <script src="/ws-0001/js/learn.js?1713588244"></script>
+    <script src="/ws-0001/js/hugo-learn.js?1713588244"></script>
 
-    <link href="/ws-0001/mermaid/mermaid.css?1713584103" rel="stylesheet" />
-    <script src="/ws-0001/mermaid/mermaid.js?1713584103"></script>
+    <link href="/ws-0001/mermaid/mermaid.css?1713588244" rel="stylesheet" />
+    <script src="/ws-0001/mermaid/mermaid.js?1713588244"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

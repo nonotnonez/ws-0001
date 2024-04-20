@@ -6,10 +6,16 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-## Internet gateway configure:
+## Install & Run Docker Compose:
 
-- **An AWS Internet Gateway:** is a managed service that allows communication between instances within your Amazon Virtual Private Cloud (VPC) and the internet.
+- Build **Docker Compose** for **Terraform**:   **docker-compose.yml**
+![22](/ws-0001/images/2-prepair/2.2-dockercompose/1-dockercompose.png)
 
-- We will create a Internet Gateway (name: **Internet Gateway**) and attach to our VPC (**WebServers**)
+- Run Docker Compose:
 
-![VPC](/images/2-prepairation/221.png?featherlight=false&width=90pc)
+![22](/ws-0001/images/2-prepair/2.2-dockercompose/2.png)
+
+- Check Docker Images:
+
+
+![22](/ws-0001/images/2-prepair/2.2-dockercompose/3.png)

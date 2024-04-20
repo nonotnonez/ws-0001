@@ -6,14 +6,26 @@ chapter : false
 pre : " <b> 2.3 </b> "
 ---
 
-## Route table configure
+## Terraform code to Deployment AWS
 
-- **An AWS Route Table** is a set of rules, also known as routes, that determine where network traffic is directed within a Virtual Private Cloud (VPC).
-- We will create a route table (name: **Route Table-Public**) connect to **Internet gateway** and allow two subnets (**WebServers-Subnet1** and **WebServers-Subnet2**)
+- **Review Terraform file** :
+    - **main.tf** :
+         Resource blocks describe infrastructure objects like VPCs, subnets, route tables, and gateways
+   ![23](/ws-0001/images/2-prepair/2.3-terraform/5-main.png)
 
+    - **provider.tf**:
+        Enables Terrafrom to interact with cloud providers and other APIs
+    ![23](/ws-0001/images/2-prepair/2.3-terraform/2-provider.png)
 
-![VPC](/images/2-prepairation/231.png?featherlight=false&width=90pc)
+    - **versions.tf**:
+        Sets version constaints for Terraform and optionally maps provides to a source address and version constaint
+    ![23](/ws-0001/images/2-prepair/2.3-terraform/1-versions.png)
 
-![VPC](/images/2-prepairation/232.png?featherlight=false&width=90pc)
+    - **terraform.tfvars**:
+        To set lots of variables, it is more convenient to specify their values in a variable definitions file
+    ![23](/ws-0001/images/2-prepair/2.3-terraform/4-tfvars.png)
 
+    - **variables.tf**
+        Input variables define reusable values and work like function arguments in general-purpose programming languages
+    ![23](/ws-0001/images/2-prepair/2.3-terraform/3-variables.png)
 

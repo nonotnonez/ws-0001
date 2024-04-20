@@ -12,21 +12,21 @@
     <title>Terraform :: Start with Amazon EFS file system .</title>
 
     
-    <link href="/ws-0001/css/nucleus.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/fontawesome-all.min.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/hybrid.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/featherlight.min.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/auto-complete.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/theme.css?1713584103" rel="stylesheet">
-    <link href="/ws-0001/css/hugo-theme.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/nucleus.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/fontawesome-all.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/hybrid.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/featherlight.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/perfect-scrollbar.min.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/auto-complete.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/atom-one-dark-reasonable.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/theme.css?1713588244" rel="stylesheet">
+    <link href="/ws-0001/css/hugo-theme.css?1713588244" rel="stylesheet">
     
-    <link href="/ws-0001/css/theme-workshop.css?1713584103" rel="stylesheet">
+    <link href="/ws-0001/css/theme-workshop.css?1713588244" rel="stylesheet">
     
     
 
-    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713584103"></script>
+    <script src="/ws-0001/js/jquery-3.3.1.min.js?1713588244"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713584103"></script>
-<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713584103"></script>
+<script type="text/javascript" src="/ws-0001/js/lunr.min.js?1713588244"></script>
+<script type="text/javascript" src="/ws-0001/js/auto-complete.js?1713588244"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/ws-0001\/";
     
 </script>
-<script type="text/javascript" src="/ws-0001/js/search.js?1713584103"></script>
+<script type="text/javascript" src="/ws-0001/js/search.js?1713588244"></script>
 
     
   </div>
@@ -289,13 +289,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/" title="Create Security groups" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.1-vpcsubnet/" title="VPC &amp; Subnet" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-tfconfig/3.1-createsecuritygroupsforefs/">
-           <b> 3.1 </b> Create Security groups
+      <a href="/ws-0001/3-tfconfig/3.1-vpcsubnet/">
+           <b> 3.1 </b> VPC &amp; Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -317,13 +317,13 @@
  
   
     
-    <li data-nav-id="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/" title="Create EFS for file systems" class="dd-item 
+    <li data-nav-id="/ws-0001/3-tfconfig/3.2-ec2/" title="EC2" class="dd-item 
         
         
         
         ">
-      <a href="/ws-0001/3-tfconfig/3.2-createefsforfilesystems/">
-           <b> 3.2 </b> Create EFS for file systems
+      <a href="/ws-0001/3-tfconfig/3.2-ec2/">
+           <b> 3.2 </b> EC2
           
             <i class="fas fa-check read-icon"></i>
           
@@ -537,7 +537,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#route-table-configure">Route table configure</a></li>
+    <li><a href="#terraform-code-to-deployment-aws">Terraform code to Deployment AWS</a></li>
   </ul>
 </nav>
     </div>
@@ -563,13 +563,38 @@
 
 
 
-	<h2 id="route-table-configure">Route table configure</h2>
+	<h2 id="terraform-code-to-deployment-aws">Terraform code to Deployment AWS</h2>
 <ul>
-<li><strong>An AWS Route Table</strong> is a set of rules, also known as routes, that determine where network traffic is directed within a Virtual Private Cloud (VPC).</li>
-<li>We will create a route table (name: <strong>Route Table-Public</strong>) connect to <strong>Internet gateway</strong> and allow two subnets (<strong>WebServers-Subnet1</strong> and <strong>WebServers-Subnet2</strong>)</li>
+<li><strong>Review Terraform file</strong> :
+<ul>
+<li>
+<p><strong>main.tf</strong> :
+Resource blocks describe infrastructure objects like VPCs, subnets, route tables, and gateways
+<img alt="23" src="/ws-0001/images/2-prepair/2.3-terraform/5-main.png"></p>
+</li>
+<li>
+<p><strong>provider.tf</strong>:
+Enables Terrafrom to interact with cloud providers and other APIs
+<img alt="23" src="/ws-0001/images/2-prepair/2.3-terraform/2-provider.png"></p>
+</li>
+<li>
+<p><strong>versions.tf</strong>:
+Sets version constaints for Terraform and optionally maps provides to a source address and version constaint
+<img alt="23" src="/ws-0001/images/2-prepair/2.3-terraform/1-versions.png"></p>
+</li>
+<li>
+<p><strong>terraform.tfvars</strong>:
+To set lots of variables, it is more convenient to specify their values in a variable definitions file
+<img alt="23" src="/ws-0001/images/2-prepair/2.3-terraform/4-tfvars.png"></p>
+</li>
+<li>
+<p><strong>variables.tf</strong>
+Input variables define reusable values and work like function arguments in general-purpose programming languages
+<img alt="23" src="/ws-0001/images/2-prepair/2.3-terraform/3-variables.png"></p>
+</li>
 </ul>
-<p><img alt="VPC" src="/images/2-prepairation/231.png?featherlight=false&width=90pc"></p>
-<p><img alt="VPC" src="/images/2-prepairation/232.png?featherlight=false&width=90pc"></p>
+</li>
+</ul>
 
 
 
@@ -834,19 +859,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/ws-0001/js/clipboard.min.js?1713584103"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713584103"></script>
-    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713584103"></script>
-    <script src="/ws-0001/js/jquery.sticky.js?1713584103"></script>
-    <script src="/ws-0001/js/featherlight.min.js?1713584103"></script>
-    <script src="/ws-0001/js/highlight.pack.js?1713584103"></script>
+    <script src="/ws-0001/js/clipboard.min.js?1713588244"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.min.js?1713588244"></script>
+    <script src="/ws-0001/js/perfect-scrollbar.jquery.min.js?1713588244"></script>
+    <script src="/ws-0001/js/jquery.sticky.js?1713588244"></script>
+    <script src="/ws-0001/js/featherlight.min.js?1713588244"></script>
+    <script src="/ws-0001/js/highlight.pack.js?1713588244"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713584103"></script>
-    <script src="/ws-0001/js/learn.js?1713584103"></script>
-    <script src="/ws-0001/js/hugo-learn.js?1713584103"></script>
+    <script src="/ws-0001/js/modernizr.custom-3.6.0.js?1713588244"></script>
+    <script src="/ws-0001/js/learn.js?1713588244"></script>
+    <script src="/ws-0001/js/hugo-learn.js?1713588244"></script>
 
-    <link href="/ws-0001/mermaid/mermaid.css?1713584103" rel="stylesheet" />
-    <script src="/ws-0001/mermaid/mermaid.js?1713584103"></script>
+    <link href="/ws-0001/mermaid/mermaid.css?1713588244" rel="stylesheet" />
+    <script src="/ws-0001/mermaid/mermaid.js?1713588244"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
