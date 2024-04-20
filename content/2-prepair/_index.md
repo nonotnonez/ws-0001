@@ -9,7 +9,7 @@ pre : " <b> 2. </b> "
 ## Diagram for Workshop
 In this lab, we will be constructing a model based on the following diagram:
 
-![2](/ws-0001/images/2/tf-ws-0001.png?featherlight=false&width=50pc)
+![2](/ws-0001/images/2/tf-ws-0001.png?featherlight=false&width=90pc)
 
 
 ### Contents
