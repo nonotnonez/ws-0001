@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>http://localhost:1313/ws-0001/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/2-prepair/2.1-aws/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/1-intro/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/3-tfconfig/3.1-vpcsubnet/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/5-iac/5.2-ansible/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/2-prepair/2.2-dockercompose/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/2-prepair/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/2-prepair/2.3-terraform/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/3-tfconfig/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/2-prepair/2.4-github/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/4-cleanup/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/5-iac/5.1-ec2/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/5-iac/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/ws-0001/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/ws-0001/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/ws-0001/vi/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

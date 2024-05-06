@@ -1,7 +1,7 @@
 # relativeURLs = true
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
-BaseURL = "https://nonotnonez.github.io/ws-0001"
+BaseURL = "https://nonotnones.github.io/ws-0001/"
 
 # For search functionality
 [outputs]
@@ -17,6 +17,8 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
+  # When using mulitlingual website, disable the switch language button.
+  disableLanguageSwitchingButton = true
   
 [Languages]
 [Languages.en]
@@ -35,3 +37,21 @@ name = "<i class='fab fa-facebook'></i> AWS Study Group - FB Group"
 identifier = "AWS Study Group FB"
 url = "https://www.facebook.com/groups/awsstudygroupfcj"
 weight = 20
+
+[Languages.vi]
+title = "Bắt đầu với Amazon EFS file system "
+weight = 2
+languageName = "Tiếng Việt"
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fab fa-aws'></i> AWS Study Group - Blog"
+identifier = "AWS Study Group"
+url = "http://awsstudygroup.com"
+weight = 20
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB"
+identifier = "AWS Study Group FB"
+url = "https://www.facebook.com/groups/awsstudygroupfcj"
+weight = 20
+

@@ -1,94 +1,101 @@
 [
 {
 	"uri": "http://localhost:1313/ws-0001/",
-	"title": " IaC with Terraform and AWS ",
+	"title": " Amazon EFS file system ",
 	"tags": [],
 	"description": "",
-	"content": "Infrastructure As Code with Terraform and AWS Overview Project In this workshop we will use Terraform interact with AWS to create VPC, Subnet, EC2 , Route table, Internet gateway, Security group \u0026hellip;\nOverview Terraform Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.\nTerraform plugins called providers let Terraform interact with cloud platforms and other services via their application programming interfaces (APIs). HashiCorp and the Terraform community have written over 1,000 providers to manage resources on Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP)\u0026hellip;\nContent Introduction Prepairation Terraform Configure Resource Cleanup IaC Advanced "
+	"content": "File Systems in the Cloud Overview Amazone Elastic File System (Amazon EFS) provides a serverless, set-and-forget-elastic file system that you can use to share file data without provisioning or managing storage.\nIn this workshop , we will deploy and maintain a file systems infrastructure that is asscessible from two different server\nContent Introduction Prepairation Configure EFS Resource Cleanup "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/2-prepair/2.1-aws/",
-	"title": "AWS",
+	"uri": "http://localhost:1313/ws-0001/3-configureefs/3.1-createsecuritygroupsforefs/",
+	"title": "Create Security groups",
 	"tags": [],
 	"description": "",
-	"content": "Setting up AWS for Terraform Account CLI \u0026amp; Secret Key Create IAM user = tf-cli Permision = AdministratorAccess Download and store Secret \u0026amp; Access Key AWS Console process "
+	"content": "Security group settings Create Create Security group for EFS interface: Name:\tWebServers-EFS-1-SG VPC:\tWeb_Servers_SG Configure Inbound: Allow NFS Checking Security Groups interface: Select WebServers-EFS-1-SG "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/5-iac/5.1-ec2/",
-	"title": "EC2",
-	"tags": [],
-	"description": "",
-	"content": "AWS Infratructure as code with EC2 1- Create Key Pairs AWS key-pair name: tf-keypair 2- Terraform configure Same configure files: visions.tf , provider.tf\nterraform.tfvars main.tf\nReview : Variables - VPC \u0026amp; Subnet Review : Route table - Internet gateway - Assciate subnet with Route table Review : Security Group Review : EC2 Instance provision 3 - Run Terraform docker-compose run \u0026ndash;rm terraform init docker-compose run \u0026ndash;rm terraform plan docker-compose run \u0026ndash;rm terraform apply 4 - AWS Console Check: Review : Instances Review : VPC Review : Subnet Review : Route table Review : Internet Gateway Review : Security Group 5 - Clean up: docker-compose run –rm terraform destroy "
-},
-{
-	"uri": "http://localhost:1313/ws-0001/1-intro/",
+	"uri": "http://localhost:1313/ws-0001/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": "Infrastructure As Code with Terraform and AWS Preview process To deploy infrastructure with Terraform:\nScope - Identify the infrastructure for your project. Author - Write the configuration for your infrastructure. Initialize - Install the plugins Terraform needs to manage the infrastructure. Plan - Preview the changes Terraform will make to match your configuration. Apply - Make the planned changes. Content Introduction Prepairation Terraform Configure Resource Cleanup "
+	"content": "Introduction to Amazon EFS Amazon EFS create a shared storage file system that is available concurrently to multiple instances in Amazon Elastic Compute Cloud (Amazon EC2).\nAmazon EFS can be used to share file data without provisioning or managing servers. Amazone EFS automatically grows and shinks as files are added and removed , so capacity doesn\u0026rsquo;t need to me managed. Servers access shared data in Amazon EFS by using mount targets in each Availability Zone.\nApplications on each server view each mounted file systems as a local path, similar to \u0026ldquo;/mnt/efs\u0026rdquo;.\nIn the following sections, we will:\nLaunch and configure Amazon EFS file system. Mount the file system to an Amazon EC2 instance. Connect a second EC2 instance to the same file system. Share files between the two EC2 instances. "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/3-tfconfig/3.1-vpcsubnet/",
-	"title": "VPC &amp; Subnet",
+	"uri": "http://localhost:1313/ws-0001/2-prepairation/2.1-vpcsubnets/",
+	"title": "VPC &amp; Subnets",
 	"tags": [],
 	"description": "",
-	"content": "Run Terraform Terraform init Command: docker-compose run \u0026ndash;rm terraform init Terraform plan Command: docker-compose run \u0026ndash;rm terraform plan Input AWS Access and Secret key Terraform apply Command: docker-compose run \u0026ndash;rm terraform apply Input AWS Access and Secret key AWS Console Checking VPC \u0026amp; Subnet: "
+	"content": "VPC configure An AWS Virtual Private Cloud (VPC) is a virtual network environment within the Amazon Web Services (AWS) cloud platform. It allows you to create a logically isolated section of the AWS cloud where you can launch AWS resources like EC2 instances, RDS databases, and more.\nWe will create a manual VPC with config.\nVPC Name: WebServers IPv4 CIDR: 10.10.0.0/16 Subnets configure AWS Subnets are segmented portions of an Amazon Virtual Private Cloud (VPC) network.\nThey allow you to divide the IP address range of your VPC and organize resources into smaller, manageable groups.\nWe will create two subnets with two different Availability Zone.\nSubnet 1:\nSubnet Name: WebServers-Subnet1 IPv4 CIDR: 10.10.1.0/24 Availability Zone: ap-southeast-1a Subnet 2:\nSubnet Name: WebServers-Subnet2 IPv4 CIDR: 10.10.2.0/24 Availability Zone: ap-southeast-1b "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/5-iac/5.2-ansible/",
-	"title": "Ansible",
+	"uri": "http://localhost:1313/ws-0001/3-configureefs/3.2-createefsforfilesystems/",
+	"title": "Create EFS for file systems",
 	"tags": [],
 	"description": "",
-	"content": "Infratructure As Code We are processing \u0026hellip;..\n"
+	"content": "Create EFS for file systems File systems settings: Services: EFS Choose Create file systems Name: WebServers-EFS-1 Uncheck Enable automatic backups (for reduce cost) Transition into infrequent Access (IA): choose None Transition into Archive: choose None Throught mode: Bursting Network access VPC: WebServers Mount targets: Remove all default Security groups Configure for Availability zone: ap-southeast-1a access to Security group: WebServers-EFS-1-SG Click Create Checking and copy config EFS via DNS Select WebServers-EFS-1 VPC Choose Attach Choose COPY Using the EFS mount helper: sudo mount -t efs -o tls fs-0469e4e20cb346954:/ efs "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/2-prepair/2.2-dockercompose/",
-	"title": "Docker Compose",
+	"uri": "http://localhost:1313/ws-0001/2-prepairation/2.2-internetgateway/",
+	"title": "Internet gateway",
 	"tags": [],
 	"description": "",
-	"content": "Install \u0026amp; Run Docker Compose: Build Docker Compose for Terraform: docker-compose.yml Run Docker Compose:\nCommand: docker-compose run \u0026ndash;rm terraform version Check Docker Images: Command: docker images "
+	"content": "Internet gateway configure: An AWS Internet Gateway: is a managed service that allows communication between instances within your Amazon Virtual Private Cloud (VPC) and the internet.\nWe will create a Internet Gateway (name: Internet Gateway) and attach to our VPC (WebServers)\n"
 },
 {
-	"uri": "http://localhost:1313/ws-0001/2-prepair/",
+	"uri": "http://localhost:1313/ws-0001/2-prepairation/",
 	"title": "Prepairation",
 	"tags": [],
 	"description": "",
-	"content": "Diagram for Workshop In this lab, we will be constructing a model based on the following diagram:\nContents AWS Docker Compose Terraform Git Hub "
+	"content": "Diagram for Amazon EFS Lab In this lab, we will be constructing a model based on the following diagram:\nContents VPC \u0026amp; Subnets Internet gateway Route table Security groups Instances "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/2-prepair/2.3-terraform/",
-	"title": "Terraform",
+	"uri": "http://localhost:1313/ws-0001/3-configureefs/",
+	"title": "Configure EFS",
 	"tags": [],
 	"description": "",
-	"content": "Terraform code to deployment AWS Review Terraform configure files : main.tf : Resource blocks describe infrastructure objects like VPCs, subnets, route tables, and gateways provider.tf: Enables Terrafrom to interact with cloud providers and other APIs versions.tf: Sets version constaints for Terraform and optionally maps provides to a source address and version constaint terraform.tfvars: To set lots of variables, it is more convenient to specify their values in a variable definitions file variables.tf Input variables define reusable values and work like function arguments in general-purpose programming languages "
+	"content": "Amazone Elastic File System (Amazon EFS) Using Amazon EFS, you can grow and shink your file systems automatically as you add and remove files, removing the need to provision and manage capacity to accommodate growth.\nContent Create Security groups Create EFS for file systems Launch Instances and Configure EFS Share files between two EC2 Instance "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/3-tfconfig/",
-	"title": "Terraform Configure",
+	"uri": "http://localhost:1313/ws-0001/3-configureefs/3.3-launchinstancesandconfigureefs/",
+	"title": "Launch Instances and Configure EFS",
 	"tags": [],
 	"description": "",
-	"content": " Using Terraform to create VPC and Subnet via code Content Create VPC \u0026amp; Subnet "
+	"content": "Configuration Instances configure and Mount EFS file systems:\nSelect WebServer1\nConnect to Instances\nIn CMD interface run command:\nsudo -i sudo yum install -y amazon-efs-utils mkdir data ls sudo mount -t efs -o tls fs-0469e4e20cb346954:/ data cd data sudo bash -c \u0026ldquo;cat \u0026raquo; efs-1-setup.log\u0026rdquo; efs-1 mounted in site A cat efs-1-setup.log "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/2-prepair/2.4-github/",
-	"title": "Github",
+	"uri": "http://localhost:1313/ws-0001/2-prepairation/2.3-routetable/",
+	"title": "Route table",
 	"tags": [],
 	"description": "",
-	"content": "Version control with Github Create Github Access Key : https://github.com/settings/tokens\nName: github_token_ws Expiration:\t90 days Select scopes: repo workflow Clone Source form Github: git clone https://**token**@github.com/NoNotNonez/ws-0001.git\nCopy Source code to Github Repo:\ncd /ws-0001/terraform Create .gitignore:\nto security and prevent important file upload to github Push Source code to Git Repo:\ngit status git add . git commit -m \u0026ldquo;Add Tf source\u0026rdquo; git push "
+	"content": "Route table configure An AWS Route Table is a set of rules, also known as routes, that determine where network traffic is directed within a Virtual Private Cloud (VPC). We will create a route table (name: Route Table-Public) connect to Internet gateway and allow two subnets (WebServers-Subnet1 and WebServers-Subnet2) "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/4-cleanup/",
+	"uri": "http://localhost:1313/ws-0001/4-resourcecleanup/",
 	"title": "Resource Cleanup",
 	"tags": [],
 	"description": "",
-	"content": "Clean up resources We will proceed to delete the resources in the following order:\nTerrafrom destroy: Run command: docker-compose run \u0026ndash;rm terraform destroy Import Secret \u0026amp; Access Key Checking AWS Console: Local Check:\nRun command: docker system prune -a docker images "
+	"content": "Clean up resources We will proceed to delete the resources in the following order:\nDelete Instances Access the Amazon EC2 Select WebServers1 and WebServers2 Select Terminate Delete Security Groups Access to Security Groups Select WebServers-EFS-1-SG Select delete Delete file system Access the Amazon EFS Select WebServers-EFS-1-SG. Select delete Confirm. "
 },
 {
-	"uri": "http://localhost:1313/ws-0001/5-iac/",
-	"title": "IaC Advanced",
+	"uri": "http://localhost:1313/ws-0001/2-prepairation/2.4-securitygroups/",
+	"title": "Security groups",
 	"tags": [],
 	"description": "",
-	"content": "Infratructure As Code We are processing \u0026hellip;..\nContent EC2 Ansible "
+	"content": "Security Groups Configure AWS Security Groups act as virtual firewalls that control inbound and outbound traffic for Amazon EC2 instances, as well as other AWS resources. They operate at the instance level and provide security at the protocol and port access level. Security Groups allow you to specify which traffic is allowed or denied by defining inbound and outbound rules. We will create a Security Groups (name: Web_Servers_SG) and configure Inbound rules and Outbound rules to allow Admin can connect EC2 instances "
+},
+{
+	"uri": "http://localhost:1313/ws-0001/3-configureefs/3.4-sharefilesbetweentwoec2instances/",
+	"title": "Share files between two EC2 Instance",
+	"tags": [],
+	"description": "",
+	"content": "Setting EFS in diffirent Instane In the EFS interface:\nSelect WebServers-EFS-1-SG Click Network tab Click Manage Add mount target: Configure for Availability zone: ap-southeast-1b access to Security group: WebServers-EFS-1-SG Checking EFS config:\nInstances configure and Mount EFS file systems:\nSelect WebServer2 Connect to Instances\nIn CMD interface run command:\nsudo -i sudo yum install -y amazon-efs-utils mkdir data ls sudo mount -t efs -o tls fs-0469e4e20cb346954:/ data cd data sudo bash -c \u0026ldquo;cat \u0026raquo; efs-1-setup.log\u0026rdquo; efs-1 mounted in site B cat efs-1-setup.log We will see data in different Instances "
+},
+{
+	"uri": "http://localhost:1313/ws-0001/2-prepairation/2.5-instances/",
+	"title": "Instances",
+	"tags": [],
+	"description": "",
+	"content": "Instances configure AWS instances refer to virtual servers that you can deploy and run within the Amazon Elastic Compute Cloud (EC2) service.\nYou can choose from a wide range of instance types with different CPU, memory, storage, and networking capabilities to suit your specific workload needs.\nIn free-tiers account we will create two Instances in different Available Zone:\nInstances 1:\nName: WebServer1 Instance type: t2.micro Availability zone: ap-southeast-1a Instances 2:\nName: WebServer2 Instance type: t2.micro Availability zone: ap-southeast-1b "
 },
 {
 	"uri": "http://localhost:1313/ws-0001/categories/",

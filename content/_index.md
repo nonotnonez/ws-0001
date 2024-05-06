@@ -1,30 +1,23 @@
 ---
-title : " IaC with Terraform and AWS "
+title : " Amazon EFS file system "
 date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 ---
 
-# Infrastructure As Code with Terraform and AWS
+# File Systems in the Cloud
 
-#### Overview Project
+#### Overview
 
-In this workshop we will use **Terraform** interact with **AWS** to create
-[VPC, Subnet](https://nonotnonez.github.io/ws-0001/3-tfconfig/3.1-vpcsubnet/),
-EC2 , Route table, Internet gateway, Security group ...
+Amazone Elastic File System (Amazon EFS) provides a serverless, set-and-forget-elastic file system that you can use to share file data without provisioning or managing storage.
 
-#### Overview Terraform
+In this workshop , we will deploy and maintain a file systems infrastructure that is asscessible from two different server
 
-Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.
-
-Terraform plugins called providers let Terraform interact with cloud platforms and other services via their application programming interfaces (APIs). HashiCorp and the Terraform community have written over 1,000 providers to manage resources on Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP)...
-
-![0](/ws-0001/images/1/tf-hashicorp.png?featherlight=false&width=50pc)
+![VPC](../images/1/0001.png?featherlight=false&width=50pc)
 
 #### Content
 
-1. [Introduction](/ws-0001/1-intro/)
-2. [Prepairation](/ws-0001/2-prepair/)
-3. [Terraform Configure](/ws-0001/3-tfconfig/)
-4. [Resource Cleanup](/ws-0001/4-cleanup/)
-5. [IaC Advanced](/ws-0001/5-iac/)
+1. [Introduction](1-introduce/)
+2. [Prepairation](2-prepairation/)
+3. [Configure EFS](3-configureefs/)
+4. [Resource Cleanup](4-resourcecleanup/)
