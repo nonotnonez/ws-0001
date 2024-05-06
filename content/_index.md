@@ -13,7 +13,7 @@ Amazone Elastic File System (Amazon EFS) provides a serverless, set-and-forget-e
 
 In this workshop , we will deploy and maintain a file systems infrastructure that is asscessible from two different server
 
-![VPC](../images/1/0001.png?featherlight=false&width=50pc)
+![VPC](/ws-0001/images/1/0001.png?featherlight=false&width=50pc)
 
 #### Content
 
